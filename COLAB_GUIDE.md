@@ -11,10 +11,11 @@ This guide walks you through deploying and running **Mirror-Leech-Telegram-Bot (
 2. [Prerequisites](#-prerequisites)
 3. [Quick Start Guide](#-quick-start-guide)
 4. [Detailed Cell Breakdown](#-detailed-cell-breakdown)
-5. [Configuring Cloudflare Tunnel (Torrent Web Selection)](#-configuring-cloudflare-tunnel-torrent-web-selection)
-6. [Persisting Credentials on Google Drive](#-persisting-credentials-on-google-drive)
-7. [Tips to Prevent Colab Disconnections](#-tips-to-prevent-colab-disconnections)
-8. [Troubleshooting & FAQs](#-troubleshooting--faqs)
+5. [Anti-Seeding Configuration (Zero Upload)](#-anti-seeding-configuration-zero-upload)
+6. [Configuring Cloudflare Tunnel (Torrent Web Selection)](#-configuring-cloudflare-tunnel-torrent-web-selection)
+7. [Persisting Credentials on Google Drive](#-persisting-credentials-on-google-drive)
+8. [Tips to Prevent Colab Disconnections](#-tips-to-prevent-colab-disconnections)
+9. [Troubleshooting & FAQs](#-troubleshooting--faqs)
 
 ---
 
@@ -121,6 +122,20 @@ Before launching the notebook, gather the following:
   ```bash
   pkill -9 -f aria2c; pkill -9 -f qbittorrent-nox; pkill -9 -f sabnzbdplus; pkill -9 -f gunicorn; pkill -9 -f cloudflared; pkill -9 -f "python3 -m bot"
   ```
+
+---
+
+## 🚫 Anti-Seeding Configuration (Zero Upload)
+
+The bot is pre-configured to prevent seeding both during download and after download completion:
+
+1. **During Download:**
+   - **qBittorrent:** Global upload slots are set to `0` (`MaxUploads=0`, `MaxActiveUploads=0`, `MaxUploadsPerTorrent=0`) and the global upload rate is throttled to `1 KiB/s` (`GlobalUPSpeedLimit=1`).
+   - **Aria2c:** Upload speed limit is capped at the strict minimum (`--max-upload-limit=1K`).
+2. **After Download Finishes:**
+   - **qBittorrent:** `GlobalMaxRatio=0` and `GlobalMaxSeedingMinutes=0` with `MaxRatioAction=0` (Pause). The torrent is immediately stopped upon reaching 100% and removed once transferred.
+   - **Aria2c:** Set to `--seed-ratio=0` and `--seed-time=0`. Aria2 terminates the torrent task the moment the last block is verified.
+   - **Bot Logic:** Never pass the `-d` flag in `/mirror` or `/leech`. Without `-d`, the bot automatically pauses and deletes the torrent immediately after uploading.
 
 ---
 
