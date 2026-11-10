@@ -6,6 +6,9 @@ programming in Python.
 - **TELEGRAM CHANNEL:** https://t.me/mltb_official_channel
 - **TELEGRAM GROUP:** https://t.me/mltb_official_support
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/anasty17/mirror-leech-telegram-bot/blob/master/MLTB_Colab.ipynb)
+- **GOOGLE COLAB GUIDE:** [COLAB_GUIDE.md](COLAB_GUIDE.md)
+
 <details>
   <summary><h1>Features</h1></summary>
 
@@ -223,6 +226,24 @@ programming in Python.
 
 <details>
   <summary><h1>How to deploy?</h1></summary>
+
+<details>
+  <summary><h2>Deploy on Google Colab (Free / No VPS Required)</h2></summary>
+
+You can run this bot completely on Google Colab with no VPS or Docker setup required:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/anasty17/mirror-leech-telegram-bot/blob/master/MLTB_Colab.ipynb)
+
+Features included in the notebook:
+- Interactive Colab Form UI for bot settings.
+- Google Drive mounting to persist `config.py`, `token.pickle`, `rclone.conf`, and `accounts.zip`.
+- Optional Cloudflare Tunnel for torrent/NZB web file selection.
+- Anti-timeout keep-alive to keep the runtime active.
+- Real-time live log viewer with graceful shutdown.
+
+Check the [Google Colab Guide](COLAB_GUIDE.md) for full instructions.
+
+</details>
 
 <details>
   <summary><h2>Prerequisites</h2></summary>
