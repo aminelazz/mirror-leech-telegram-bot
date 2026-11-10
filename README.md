@@ -6,7 +6,7 @@ programming in Python.
 - **TELEGRAM CHANNEL:** https://t.me/mltb_official_channel
 - **TELEGRAM GROUP:** https://t.me/mltb_official_support
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/anasty17/mirror-leech-telegram-bot/blob/master/MLTB_Colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aminelazz/mirror-leech-telegram-bot/blob/master/MLTB_Colab.ipynb)
 - **GOOGLE COLAB GUIDE:** [COLAB_GUIDE.md](COLAB_GUIDE.md)
 
 <details>
@@ -232,7 +232,7 @@ programming in Python.
 
 You can run this bot completely on Google Colab with no VPS or Docker setup required:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/anasty17/mirror-leech-telegram-bot/blob/master/MLTB_Colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aminelazz/mirror-leech-telegram-bot/blob/master/MLTB_Colab.ipynb)
 
 Features included in the notebook:
 - Interactive Colab Form UI for bot settings.
@@ -254,7 +254,7 @@ Check the [Google Colab Guide](COLAB_GUIDE.md) for full instructions.
 - Clone this repo:
 
 ```
-git clone https://github.com/anasty17/mirror-leech-telegram-bot mirrorbot/ && cd mirrorbot
+git clone https://github.com/aminelazz/mirror-leech-telegram-bot mirrorbot/ && cd mirrorbot
 ```
 
 - For Debian based distros
@@ -319,7 +319,7 @@ Fill up rest of the fields. Meaning of each field is discussed below.
 
 - `UPLOAD_PATHS` (`Dict`): Send Dict of keys that have path values. Example: {"path 1": "remote:rclonefolder", "path 2": "gdrive1 id", "path 3": "tg chat id", "path 4": "mt:remote:", "path 5": "b: @username"}. 
 
-- `DEFAULT_UPLOAD` (`Str`): Whether `rc` to upload to `RCLONE_PATH` or `gd` to upload to `GDRIVE_ID` or `bh` to upload to `BUZZHEAVIER_ACCOUNT_ID`. Default is `rc`. Read More [HERE](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#upload).
+- `DEFAULT_UPLOAD` (`Str`): Whether `rc` to upload to `RCLONE_PATH` or `gd` to upload to `GDRIVE_ID` or `bh` to upload to `BUZZHEAVIER_ACCOUNT_ID`. Default is `rc`. Read More [HERE](https://github.com/aminelazz/mirror-leech-telegram-bot/tree/master#upload).
 
 - `STATUS_UPDATE_INTERVAL` (`Int`): Time in seconds after which the progress/status message will be updated. Recommended `10` seconds at least.
 
@@ -351,7 +351,7 @@ options [HERE](https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#
 - `TLDV_TOKEN` (`Str`): tldv.io authorization token for downloading private meetings. Refer to the tldv.io section under Extras for how to get the token.
 
 - `USE_SERVICE_ACCOUNTS` (`Bool`): Whether to use Service Accounts or not, with google-api-python-client. For this to work
-see [Using Service Accounts](https://github.com/anasty17/mirror-leech-telegram-bot#generate-service-accounts-what-is-service-account) section below. Default is `False`.
+see [Using Service Accounts](https://github.com/aminelazz/mirror-leech-telegram-bot#generate-service-accounts-what-is-service-account) section below. Default is `False`.
 
 - `FFMPEG_CMDS` (`Dict`): Dict of list values of ffmpeg commands. You can set multiple ffmpeg commands for all files before upload. Don't write ffmpeg at beginning, start directly with the arguments. `Dict`
   - Examples: {"subtitle": ["-i mltb.mkv -c copy -c:s srt mltb.mkv", "-i mltb.video -c copy -c:s srt mltb"], "convert": ["-i mltb.m4a -c:a libmp3lame -q:a 2 mltb.mp3", "-i mltb.audio -c:a libmp3lame -q:a 2 mltb.mp3"], extract: ["-i mltb -map 0:a -c copy mltb.mka -map 0:s -c copy mltb.srt"], "metadata": ["-i mltb.mkv -map 0 -map -0:v:1 -map -0:s -map 0:s:0 -map -0:v:m:attachment -c copy -metadata:s:v:0 title={title} -metadata:s:a:0 title={title} -metadata:s:a:1 title={title2} -metadata:s:a:2 title={title2} -c:s srt -metadata:s:s:0 title={title3} mltb -y -del"], "watermark": ["-i mltb -i tg://openmessage?user_id=5272663208&message_id=322801 -filter_complex 'overlay=W-w-10:H-h-10' -c:a copy mltb"]}
@@ -407,7 +407,7 @@ see [Using Service Accounts](https://github.com/anasty17/mirror-leech-telegram-b
 **5. Update**
 
 - `UPSTREAM_REPO` (`Str`): Your github repository link, if your repo is private add `https://username:{githubtoken}@github.com/{username}/{reponame}` format. Get token from [Github settings](https://github.com/settings/tokens). So you can update your bot from filled repository on each restart.
-  - **NOTE**: Any change in docker or requirements you need to deploy/build again with updated repo to take effect. DON'T delete .gitignore file. For more information read [THIS](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#upstream-repo-recommended).
+  - **NOTE**: Any change in docker or requirements you need to deploy/build again with updated repo to take effect. DON'T delete .gitignore file. For more information read [THIS](https://github.com/aminelazz/mirror-leech-telegram-bot/tree/master#upstream-repo-recommended).
 
 - `UPSTREAM_BRANCH` (`Str`): Upstream branch for update. Default is `master`.
 

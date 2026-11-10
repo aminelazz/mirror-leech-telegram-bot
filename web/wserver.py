@@ -245,7 +245,7 @@ async def set_aria2(gid, selected_files):
 async def homepage():
     return (
         "<h1>See mirror-leech-telegram-bot "
-        "<a href='https://www.github.com/anasty17/mirror-leech-telegram-bot'>@GitHub</a> "
+        "<a href='https://www.github.com/aminelazz/mirror-leech-telegram-bot'>@GitHub</a> "
         "By <a href='https://github.com/anasty17'>Anas</a></h1>"
     )
 

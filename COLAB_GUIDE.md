@@ -2,7 +2,7 @@
 
 This guide walks you through deploying and running **Mirror-Leech-Telegram-Bot (MLTB)** directly on Google Colab without needing a paid Virtual Private Server (VPS) or local Docker installation.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/anasty17/mirror-leech-telegram-bot/blob/master/MLTB_Colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aminelazz/mirror-leech-telegram-bot/blob/master/MLTB_Colab.ipynb)
 
 ---
 
