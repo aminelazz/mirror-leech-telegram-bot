@@ -54,14 +54,14 @@ async def update_aria2_options():
 
 async def update_nzb_options():
     LOGGER.info("Get SABnzbd options from server")
-    while True:
+    for _ in range(30):
         try:
             no = (await sabnzbd_client.get_config())["config"]["misc"]
             nzb_options.update(no)
-        except:
+            return
+        except Exception:
             await sleep(0.5)
-            continue
-        break
+    LOGGER.warning("Could not connect to SABnzbd on port 8070 after 15s. Skipping NZB options.")
 
 
 async def load_settings():
