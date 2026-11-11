@@ -145,8 +145,8 @@ Colab instances are hosted behind Google's private NAT without a public IPv4 add
 
 To solve this:
 1. In **Cell 4 (Bot Configuration)**, check `ENABLE_CLOUDFLARE_TUNNEL = True`.
-2. The notebook automatically downloads `cloudflared` and launches a quick tunnel pointing to `http://localhost:8080`.
-3. It captures the generated `https://xxxx.trycloudflare.com` URL and injects it as `BASE_URL` with `BASE_URL_PORT = 8080`.
+2. The notebook automatically downloads `cloudflared` and launches a quick tunnel pointing to `http://localhost:8088`.
+3. It captures the generated `https://xxxx.trycloudflare.com` URL and injects it as `BASE_URL` with `BASE_URL_PORT = 8088`.
 4. When you mirror a torrent with the file selection flag in Telegram, clicking the selection link will open the web interface directly in your browser!
 
 ---
